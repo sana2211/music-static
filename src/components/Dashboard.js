@@ -13,7 +13,7 @@ class Dashboard extends Component{
                 <br></br>
              <DashboardHeader></DashboardHeader>
                     <h2>
-                    <i class="fas fa-music"></i>
+                    <i className="fas fa-music"></i>
                         Whats Next? Just add your favorite music and get started with the app!
                     </h2> 
                     <hr></hr>
