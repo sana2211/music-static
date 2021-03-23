@@ -34,7 +34,8 @@ padding: 15px;
 }
 .menuul
 {
-  float: right
+  float: right;
+  margin-top: -50px;
 }
 
 nav
@@ -42,3 +43,8 @@ nav
 width: 100%
 }
 
+h1{
+  font-size: 30px;
+  margin-top: 70px;
+  margin-left: 10px;
+}

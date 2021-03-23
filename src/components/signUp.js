@@ -5,21 +5,6 @@ import Footer from "./footer";
 
 export default class SignUp extends React.Component {
 
-  state = {
-    fullname: '',
-    email: '',
-    pasword:  ''
-  }
-
-  handleInput(evt)
-  { 
-    //console.log(evt.currentTarget.value);
-    const {name, value} = evt.currentTarget;
-    this.setState({
-      [name]: value,
-    });
-    console.log(this.state.fullname);
-  }
   handleSubmit = (evt) => {
     evt.preventDefault();
     fetch('http://localhost:8000/api/users', {

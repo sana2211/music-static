@@ -1,10 +1,45 @@
 import React from "react";
 import Header from "./header";
-//import styles from "./login.css";
 import Footer from "./footer";
 
+
 export default class SignIn extends React.Component {
+  handleInput(evt)
+  { 
+    //console.log(evt.currentTarget.value);
+    const {name, value} = evt.currentTarget;
+    this.setState({
+      [name]: value,
+    });
+    //console.log(this.state.name);
+  }
   
+  handleSubmit = (evt) => {
+    evt.preventDefault();
+    fetch(`http://localhost:8000/api/users/checkuser/${this.state.email}`,
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        'email': this.state.email,
+        'password': this.state.password
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }) 
+    .then(result=>result.json())
+    .then(result=>{
+      console.log(result);
+      if(result.email)
+      {
+        window.location.replace('/dashboard/'+result.id)
+      }
+      else{
+       alert('Invalid login')
+      }
+    })
+    .catch(err=>console.log(err))
+  }  
   render() {
     return (
       <div>

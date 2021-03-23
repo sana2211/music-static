@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Header(props) {
-  return (
+function Header(props) { 
+return (
       <header>
         <nav>
           <ul>
@@ -10,6 +10,8 @@ function Header(props) {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/signup">Sign up</Link></li>
             <li><Link to="/signin">Sign in</Link></li>
+            <li><Link to="/Dashboard">Dashboard</Link></li>
+
             </ul>
           </ul>
         </nav>
