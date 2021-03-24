@@ -2,64 +2,9 @@ import React from "react";
 //import Header from "./header";
 //import Footer from "./footer";
 
-export default class AddMusic extends React.Component {
-  state = {
-    title: '',
-    artist: '',
-    url:  ''
-  }
-
-  handleInput(evt)
-  { 
-    
-    const {name, value} = evt.currentTarget;
-    this.setState({
-      [name]: value,
-    });
-   
-  }
-  handleSubmit = (evt) => {
-      //Add validation
-  const a = window.location.href.split('/');
-  const id = a[a.length - 1]
-  console.log(id);
-
-    evt.preventDefault();
-    if(!this.state.title)
-    {
-      alert("Title is Required");
-      return false;
-    }
-    const data = JSON.stringify(
-      {
-        title_name: this.state.title
-      });
-    fetch('http://localhost:8000/api/bookmarks/'+id, {
-      method: 'POST',
-      body: JSON.stringify({
-        'user_id': id,
-        'title': this.state.title, 
-        'artist': this.state.artist,
-        'url': this.state.url
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    //.then(result=>console.log(result.json()))
-    .then(response=>response.json())
-    .then(response=>
-      {
-        if(response)
-        {
-          alert("Music Added!");
-          window.location.reload();
-        }
-      })
-    .catch(err=>console.log(err))
-  }
-  render() {
-    const { music } = this.props
+class AddMusic extends React.Component {
+  state = {  }
+    render() {
 
     return (
       <div>
@@ -89,3 +34,4 @@ export default class AddMusic extends React.Component {
 
     )};
 }
+export default AddMusic;
