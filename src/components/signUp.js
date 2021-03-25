@@ -2,25 +2,11 @@ import React from "react";
 import Header from "./header";
 //import styles from "./login.css";
 import Footer from "./footer";
+import { Link } from "react-router-dom";
 
 export default class SignUp extends React.Component {
 
-  handleSubmit = (evt) => {
-    evt.preventDefault();
-    fetch('http://localhost:8000/api/users', {
-      method: 'POST',
-      body: JSON.stringify({
-        'fullname': this.state.fullname, 
-        'email': this.state.email,
-        'password': this.state.password
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(result=>console.log(result.json()))
-    .catch(err=>console.log(err))
-  }
+
   render() {
     return (
       <div>
@@ -30,18 +16,18 @@ export default class SignUp extends React.Component {
           <div className="flex-container">
             <div className="form-group">
               <label htmlFor="fullname">Fullname</label>
-              <input onChange={(evt)=>this.handleInput(evt)} type="text" name="fullname" placeholder="fullname" />
+              <input type="text" name="fullname" placeholder="fullname" />
             </div>
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input onChange={(evt)=>this.handleInput(evt)} type="text" name="email" placeholder="email" />
+              <input type="text" name="email" placeholder="email" />
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <input onChange={(evt)=>this.handleInput(evt)} type="password" name="password" placeholder="password" />
+              <input type="password" name="password" placeholder="password" />
             </div>
             <div className="form-group">
-             <button>Sign Up</button>
+            <button><Link to="/signin">Sign Up</Link></button>
             </div>
             <br></br>
           </div>

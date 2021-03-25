@@ -8,8 +8,8 @@ function DashboardHeader(props) {
         <nav>
           <ul>
             <ul className="menuul">
-            <li><Link to="/" >Welcome</Link></li>
-            <li><Link to="/signin">Sign out</Link></li>
+            <li>Welcome jondoe1@email.com</li>
+            <li><Link to="/">Sign out</Link></li>
             </ul>
           </ul>
         </nav>

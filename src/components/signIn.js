@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "./header";
 import Footer from "./footer";
+import { Link } from "react-router-dom";
 
 class signIn extends React.Component {
-  state = {  }
   render() { 
       return (
        <div>
@@ -14,14 +14,14 @@ class signIn extends React.Component {
             
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input onChange={(evt)=>this.handleInput(evt)} type="text" name="email" placeholder="Email" />
+              <input type="text" name="email" placeholder="Email" />
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <input onChange={(evt)=>this.handleInput(evt)} type="password" name="password" placeholder="password" />
+              <input type="password" name="password" placeholder="password" />
             </div>
             <div className="form-group">
-             <button>Sign In</button>
+             <button><Link to="/dashboard">Sign In</Link></button>
             </div>
             <br></br>
           </div>
